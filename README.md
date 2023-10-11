@@ -154,3 +154,17 @@ service bind9 restart
 ```
 Go to other nodes terminal and then try to ping abimanyu.i11.com
 ![pingsoal3](https://cdn.discordapp.com/attachments/882933764735533076/1161570904384479252/image.png?ex=6538c834&is=65265334&hm=13badc90443f9fe034e8d5b470c1e24d21dc8225c673a0add16b8b1e54e7a26f&)
+
+### No 4 Answer
+Nano into /etc/bind/jarkom/abimanyu.i11.com
+```
+nano /etc/bind/jarkom/abimanyu.i11.com
+```
+Edit the file as follows
+![filesoal4](https://cdn.discordapp.com/attachments/934661338934943774/1161573294818992211/image.png?ex=6538ca6e&is=6526556e&hm=a3d5a915afda1d5ffec7497042fc7dba9c488527202575680d762bb46d1a56a9&)
+Restart bind
+```
+service bind9 restart
+```
+Ping parikesit.i11.com from other nodes
+![pingsoal4](https://cdn.discordapp.com/attachments/934661338934943774/1161573767080837180/image.png?ex=6538cadf&is=652655df&hm=39b5059b1bf7f9cb6cfa95f02fb2354efb746931edaec2e57d3ec59acd4acede&)
