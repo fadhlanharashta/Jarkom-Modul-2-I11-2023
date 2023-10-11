@@ -125,5 +125,32 @@ Edit the file as follows
 ![filesoal2](https://cdn.discordapp.com/attachments/934661338934943774/1161566522498617344/image.png?ex=6538c41f&is=65264f1f&hm=75cc7913b3019496e626f9facb90918201e0daffad63f94bfb43b53c6cc168cb&)
 Go to other nodes terminal and then try to ping arjuna.i11.com
 ![pingsoal2](https://cdn.discordapp.com/attachments/934661338934943774/1161567307869458443/image.png?ex=6538c4db&is=65264fdb&hm=73f531be9d57335d1859fb4b0d60fc165c99769582afededcbfc09eb49e60157&)
-
-
+### No 3 Answer
+A website which accesses abimayu.i11.com with aliases www.abimayu.i11.com<br>
+Nano into /etc/bind/named.conf.local
+```
+nano /etc/bind/named.conf.local
+```
+Inside write
+```
+zone "abimanyu.i11.com"  {
+  type master;
+  file "/etc/bind/jarkom/abimanyu.i11.com";
+};
+```
+Copy db.local into the directory
+```
+cp /etc/bind/db.local /etc/bind/jarkom/abimanyu.i11.com
+```
+Use nano to edit the file
+```
+nano /etc/bind/jarkom/abimanyu.i11.com
+```
+Inside the file edit as follows
+![filesoal3](https://cdn.discordapp.com/attachments/934661338934943774/1161569811210436688/image.png?ex=6538c72f&is=6526522f&hm=a3e213a03d769e998a15e286b9e7c540d4c850aecf2c9424f6cc0eafbc1b558c&)
+Restart Bind
+```
+service bind9 restart
+```
+Go to other nodes terminal and then try to ping abimanyu.i11.com
+![pingsoal3](https://cdn.discordapp.com/attachments/882933764735533076/1161570904384479252/image.png?ex=6538c834&is=65265334&hm=13badc90443f9fe034e8d5b470c1e24d21dc8225c673a0add16b8b1e54e7a26f&)
