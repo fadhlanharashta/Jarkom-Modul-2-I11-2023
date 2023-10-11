@@ -95,3 +95,31 @@ cat /etc/resolv.conf
 5. Buat juga reverse domain untuk domain utama. (Abimanyu saja yang direverse)<br>
 6. Agar dapat tetap dihubungi ketika DNS Server Yudhistira bermasalah, buat juga Werkudara sebagai DNS Slave untuk domain utama.<br>
 7. Seperti yang kita tahu karena banyak sekali informasi yang harus diterima, buatlah subdomain khusus untuk perang yaitu baratayuda.abimanyu.yyy.com dengan alias www.baratayuda.abimanyu.yyy.com yang didelegasikan dari Yudhistira ke Werkudara dengan IP menuju ke Abimanyu dalam folder Baratayuda.<br>
+## Answer
+### No 2 Answer
+Create main website arhuna.i11.com. <br>
+Use nano to edit named.conf.local
+```
+nano /etc/bind/named.conf.local
+```
+Inside write
+```
+zone "arjuna.i11.com"  {
+  type master;
+  file "/etc/bind/jarkom/arjuna.i11.com";
+};
+```
+Make directory for websites
+```
+mkdir /etc/bind/jarkom
+```
+Copy db.local into the directory
+```
+cp /etc/bind/db.local /etc/bind/jarkom/arjuna.i11.com
+```
+Use nano to edit the file
+```
+nano /etc/bind/jarkom/arjuna.i11.com
+```
+Edit the file as follows
+![filesoal2](https://cdn.discordapp.com/attachments/934661338934943774/1161566522498617344/image.png?ex=6538c41f&is=65264f1f&hm=75cc7913b3019496e626f9facb90918201e0daffad63f94bfb43b53c6cc168cb&)
