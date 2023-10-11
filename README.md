@@ -123,3 +123,7 @@ nano /etc/bind/jarkom/arjuna.i11.com
 ```
 Edit the file as follows
 ![filesoal2](https://cdn.discordapp.com/attachments/934661338934943774/1161566522498617344/image.png?ex=6538c41f&is=65264f1f&hm=75cc7913b3019496e626f9facb90918201e0daffad63f94bfb43b53c6cc168cb&)
+Go to other nodes terminal and then try to ping arjuna.i11.com
+![pingsoal2](https://github.com/fadhlanharashta/Jarkom-Modul-2-I11-2023/assets/115058221/34177876-0872-48c6-86ca-4448205dc893)
+
+
