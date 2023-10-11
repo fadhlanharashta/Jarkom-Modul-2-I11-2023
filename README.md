@@ -70,6 +70,23 @@ iface eth0 inet static
   netmask 255.255.255.255.0
   gateway 10.79.3.1
 ```
+## Terminal Setup 
+### Terminal Setup for Pandudewanata
+```
+uptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 10.79.0.0/16
+```
+To see the nameserver
+```
+cat /etc/resolv.conf
+```
+### Terminal Setup for Other Nodes
+```
+echo nameserver 192.168.122.1 > /etc/resolv.conf
+```
+Check the nameserver
+```
+cat /etc/resolv.conf
+```
 ## Question
 1. Yudhistira akan digunakan sebagai DNS Master, Werkudara sebagai DNS Slave, Arjuna merupakan Load Balancer yang terdiri dari beberapa Web Server yaitu Prabakusuma, Abimanyu, dan Wisanggeni. Buatlah topologi dengan pembagian sebagai berikut. Folder topologi dapat diakses pada drive berikut <br>
 2. Buatlah website utama pada node arjuna dengan akses ke arjuna.yyy.com dengan alias www.arjuna.yyy.com dengan yyy merupakan kode kelompok.<br>
