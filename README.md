@@ -228,3 +228,39 @@ Because the client to test is nakula, change the nameserver too <br>
 ![change6werk](https://cdn.discordapp.com/attachments/934661338934943774/1161984805802623086/image.png?ex=653a49ae&is=6527d4ae&hm=26373bb29c7f72177af11bcd0350d7a0f14c1419623d0b2397a7790e9b05c973&)<br>
 Ping abimanyu from nakula <br>
 ![ping6](https://cdn.discordapp.com/attachments/934661338934943774/1161984820751118336/image.png?ex=653a49b1&is=6527d4b1&hm=f63c72816f1ef1c236a80620424894cd2279805954a155914e4061c878a1f73a&)
+### No 7 Answer
+Nano into /etc/bind/jarkom/abimanyu.i11.com
+```
+nano /etc/bind/jarkom/abimanyu.i11.com
+```
+Edit as follows
+![file7](https://cdn.discordapp.com/attachments/934661338934943774/1161987079744536597/image.png?ex=653a4bcc&is=6527d6cc&hm=30e71e9c11344dc36f193f55a83994dec053a082ad668617a4f232f6fccf6789&)<br>
+Edit the /etc/bind/named.conf.options as follows
+![fileedit7](https://cdn.discordapp.com/attachments/934661338934943774/1161987559707123833/image.png?ex=653a4c3e&is=6527d73e&hm=e1bd4b01ae9ee0e16df860a7631ea9ef886e704aa60a95153d8b10d7d4487345&)<br>
+Then edit the named.conf.local in yudhistira as follows
+![fileedit7-2](https://cdn.discordapp.com/attachments/934661338934943774/1161987934992486510/image.png?ex=653a4c98&is=6527d798&hm=3cc2b48541e9725ef54f563ce7873d74b2a76d62095b1990fe776c2aad9b44ab&)<br>
+Restart Bind
+```
+service bind9 restart
+```
+Go to werkudara and Edit the /etc/bind/named.conf.options as follows
+```
+nano /etc/bind/named.conf.options
+```
+![fileeditwerk7](https://cdn.discordapp.com/attachments/934661338934943774/1161988419489116230/image.png?ex=653a4d0b&is=6527d80b&hm=97c449a3e76f6bebbbfbb8ac9c2f76c693a8c00c6bf2befc023f10c311b404a3&)<br>
+Edit the named.conf.local in werkudara
+![fileeditwerk7-2](https://cdn.discordapp.com/attachments/934661338934943774/1161988743247433828/image.png?ex=653a4d59&is=6527d859&hm=955964f529c85b34646f22aa21ed3cb87c630b023ad9dfe487ec0ffbb1dc6949&)<br>
+Then copy the db_local to delegasi folder
+```
+cp /etc/bind/db.local /etc/bind/delegasi/baratayuda.abimanyu.i11.com
+```
+Edit the file /etc/bind/delegasi/baratayuda.abimanyu.i11.com
+```
+nano /etc/bind/delegasi/baratayuda.abimanyu.i11.com
+```
+![fileeditabimanyu7](https://cdn.discordapp.com/attachments/934661338934943774/1161989818067197972/image.png?ex=653a4e59&is=6527d959&hm=481ec2d895aa4c3a20543b186775421f84bd0fee658e8ca77c20341dfbc7e144&)<br>
+Restart Bind and then test it
+```
+service bind9 restart
+```
+![fileeditabimanyu7](https://cdn.discordapp.com/attachments/934661338934943774/1161990010644471848/image.png?ex=653a4e87&is=6527d987&hm=797b03f3177696d384d793d31c2570cdf2949026d385d972006951ad38482c00&)<br>
