@@ -168,3 +168,63 @@ service bind9 restart
 ```
 Ping parikesit.i11.com from other nodes
 ![pingsoal4](https://cdn.discordapp.com/attachments/934661338934943774/1161573767080837180/image.png?ex=6538cadf&is=652655df&hm=39b5059b1bf7f9cb6cfa95f02fb2354efb746931edaec2e57d3ec59acd4acede&)
+
+### No 5 Answer
+Nano into /etc/bind/jarkom/abimanyu.i11.com
+```
+nano /etc/bind/jarkom/named.conf.local
+```
+Inside edit as follows
+![filesoal5](https://cdn.discordapp.com/attachments/934661338934943774/1161978079963529256/image.png?ex=653a436a&is=6527ce6a&hm=870ef4b29d9de6ccb3239c9ed44ccd413d95b15637da6ba406cb6379080a7b0b&)
+Copy file into jarkom directory
+```
+cp /etc/bind/db.local /etc/bind/jarkom/1.79.10.in-addr.arpa
+```
+Nano into the file and then edit the file as follows
+```
+nano /etc/bind/jarkom/1.79.10.in-addr.arpa
+```
+![filesoaledit5](https://cdn.discordapp.com/attachments/934661338934943774/1161980431718174800/image.png?ex=653a459b&is=6527d09b&hm=fedd6b1608a5b94f97d117f8011c6275efd10461b7862467a79044a93cd09c6b&)
+Restart Bind
+```
+service bind9 restart
+```
+Go to other nodes and check if its working by using this code
+```
+host -t PTR 10.79.1.2
+```
+Result:
+![check5](https://cdn.discordapp.com/attachments/934661338934943774/1161981849447440444/image.png?ex=653a46ed&is=6527d1ed&hm=a89260abd1dd6972aa551a6d9558ca213fb11c6fedc9334dfb52207ba3b684c7&)
+
+### No 6 Answer
+Edit named.conf.local as follows
+```
+nano /etc/bind/jarkom/named.conf.local
+```
+![file6](https://cdn.discordapp.com/attachments/934661338934943774/1161982804184285224/image.png?ex=653a47d1&is=6527d2d1&hm=f14a946f4ee9b462aa0868af0ab5f663a105a673aaeade1be188895f184b6b77&)
+Restart Bind
+```
+service bind9 restart
+```
+Install bind9 in werkudara
+```
+apt-get update
+```
+```
+apt get-install bind9 -y
+```
+Open named.conf.local in werkudara and edit as follows
+![file6werk](https://cdn.discordapp.com/attachments/934661338934943774/1161983640989880341/image.png?ex=653a4898&is=6527d398&hm=3bce9db00c3a23ec76632066257d3f9005d925a5472580c1ae7bd95f76562815&)
+Restart Bind in werkudara
+```
+service bind9 restart
+```
+Stop bind in yudhistira
+```
+service bind9 stop
+```
+![stop6](https://cdn.discordapp.com/attachments/934661338934943774/1161984360493363220/image.png?ex=653a4944&is=6527d444&hm=c3c65f5ea5e526dde1ec298bed088f18c6eb938241babff6aef5e3fb1361a53f&)
+Because the client to test is nakula, change the nameserver too
+![change6werk](https://cdn.discordapp.com/attachments/934661338934943774/1161984805802623086/image.png?ex=653a49ae&is=6527d4ae&hm=26373bb29c7f72177af11bcd0350d7a0f14c1419623d0b2397a7790e9b05c973&)
+Ping abimanyu from nakula
+![ping6](https://cdn.discordapp.com/attachments/934661338934943774/1161984820751118336/image.png?ex=653a49b1&is=6527d4b1&hm=f63c72816f1ef1c236a80620424894cd2279805954a155914e4061c878a1f73a&)
