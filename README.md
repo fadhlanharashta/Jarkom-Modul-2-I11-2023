@@ -1,7 +1,7 @@
 # Jarkom-Modul-2-I11-2023
-Muhammad Fadhlan Ashila Harashta <br>
-Hanifi Abrar Setiawan <br>
-I Putu Arya Prawira Wiwekananda <br>
+Muhammad Fadhlan Ashila Harashta - 5025211068<br>
+Hanifi Abrar Setiawan - 5025211066<br>
+I Putu Arya Prawira Wiwekananda - 5025211065<br>
 
 ## Topology
 ![topology](https://cdn.discordapp.com/attachments/934661338934943774/1161561002656157757/image.png?ex=6538befb&is=652649fb&hm=d18b00fa523b6e04a21c2b27281f381c6d5e7380716ddc05d688f2562594d2b1&)
