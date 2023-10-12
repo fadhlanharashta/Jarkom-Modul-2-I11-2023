@@ -224,7 +224,7 @@ Stop bind in yudhistira
 service bind9 stop
 ```
 ![stop6](https://cdn.discordapp.com/attachments/934661338934943774/1161984360493363220/image.png?ex=653a4944&is=6527d444&hm=c3c65f5ea5e526dde1ec298bed088f18c6eb938241babff6aef5e3fb1361a53f&)
-Because the client to test is nakula, change the nameserver too
+Because the client to test is nakula, change the nameserver too <br>
 ![change6werk](https://cdn.discordapp.com/attachments/934661338934943774/1161984805802623086/image.png?ex=653a49ae&is=6527d4ae&hm=26373bb29c7f72177af11bcd0350d7a0f14c1419623d0b2397a7790e9b05c973&)
-Ping abimanyu from nakula
+Ping abimanyu from nakula <br>
 ![ping6](https://cdn.discordapp.com/attachments/934661338934943774/1161984820751118336/image.png?ex=653a49b1&is=6527d4b1&hm=f63c72816f1ef1c236a80620424894cd2279805954a155914e4061c878a1f73a&)
