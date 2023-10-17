@@ -95,6 +95,9 @@ cat /etc/resolv.conf
 5. Buat juga reverse domain untuk domain utama. (Abimanyu saja yang direverse)<br>
 6. Agar dapat tetap dihubungi ketika DNS Server Yudhistira bermasalah, buat juga Werkudara sebagai DNS Slave untuk domain utama.<br>
 7. Seperti yang kita tahu karena banyak sekali informasi yang harus diterima, buatlah subdomain khusus untuk perang yaitu baratayuda.abimanyu.yyy.com dengan alias www.baratayuda.abimanyu.yyy.com yang didelegasikan dari Yudhistira ke Werkudara dengan IP menuju ke Abimanyu dalam folder Baratayuda.<br>
+8. Untuk informasi yang lebih spesifik mengenai Ranjapan Baratayuda, buatlah subdomain melalui Werkudara dengan akses rjp.baratayuda.abimanyu.yyy.com dengan alias www.rjp.baratayuda.abimanyu.yyy.com yang mengarah ke Abimanyu.<br>
+9. Arjuna merupakan suatu Load Balancer Nginx dengan tiga worker (yang juga menggunakan nginx sebagai webserver) yaitu Prabakusuma, Abimanyu, dan Wisanggeni. Lakukan deployment pada masing-masing worker.<br>
+10. Kemudian gunakan algoritma Round Robin untuk Load Balancer pada Arjuna. Gunakan server_name pada soal nomor 1. Untuk melakukan pengecekan akses alamat web tersebut kemudian pastikan worker yang digunakan untuk menangani permintaan akan berganti ganti secara acak. Untuk webserver di masing-masing worker wajib berjalan di port 8001-8003. Contoh: Prabukusuma:8001, Abimanyu:8002, Wisanggeni:8003.<br>
 ## Answer
 ### No 2 Answer
 Create main website arhuna.i11.com. <br>
@@ -264,3 +267,72 @@ Restart Bind and then test it
 service bind9 restart
 ```
 ![fileeditabimanyu7](https://cdn.discordapp.com/attachments/934661338934943774/1161990010644471848/image.png?ex=653a4e87&is=6527d987&hm=797b03f3177696d384d793d31c2570cdf2949026d385d972006951ad38482c00&)<br>
+### No 8 Answer
+Change the file /etc/bind/delegasi/baratayuda.abimanyu.i11.com in werkudara
+```
+/etc/bind/delegasi/baratayuda.abimanyu.i11.com
+```
+![file8](https://cdn.discordapp.com/attachments/827014097219878982/1163800964164227153/image.png?ex=6540e51c&is=652e701c&hm=ba6f3ff09b5901a588d530926db666709c6364d3cba5ed32a779060f257a223c&)<br>
+Restart the bind Go test in Nakula
+![check5](https://cdn.discordapp.com/attachments/827014097219878982/1163801012163850271/image.png?ex=6540e527&is=652e7027&hm=c3948cb90d4c3b05f662865d36297e57fe5deb0dd6e1b4d427a7b77018d519a6&)<br>
+### No 9 Answer
+Configuring the three nginx worker
+```
+apt-get update
+apt install nginx php php-fpm
+php -v
+```
+![file9](https://cdn.discordapp.com/attachments/827014097219878982/1163802194055794810/image.png?ex=6540e641&is=652e7141&hm=c9363d5bfc01e5074fc4040fa3c73f1d96ad3f81f4d014a351f4906887b5b111&)<br>
+Make a new folder called jarkom (do this to all worker)
+![filefolder9](https://cdn.discordapp.com/attachments/827014097219878982/1163802665013231626/image.png?ex=6540e6b1&is=652e71b1&hm=ba4d933a8d748c4dc673799781f210c5f85f2b81248ca977d1603d674cb0b02b&)<br>
+Edit a file in the folder named index php (each node is different (optional)), Wisangemi (an example)
+![fileedit9](https://cdn.discordapp.com/attachments/827014097219878982/1163803142476017714/image.png?ex=6540e723&is=652e7223&hm=4fd9714bd0904220ebe8329dcb8741b74eec294fc3b5e10f94db772efb7e74a5&)<br>
+Edit the /etc/nginx/sites-available/jarkom
+```
+/etc/nginx/sites-available/jarkom
+```
+![fileedit9-2](https://cdn.discordapp.com/attachments/827014097219878982/1163803474442584064/image.png?ex=6540e772&is=652e7272&hm=a3e04077db2a2c986d4c23c524097ba60f192c4ca42114ee609bcb5f41b91994&)<br>
+![fileedit9-3](https://cdn.discordapp.com/attachments/827014097219878982/1163803561239511101/image.png?ex=6540e787&is=652e7287&hm=d35527e4e7ea983f779207c26dd140ee5043f3a167e91d8c3f2242ba37085d42&)<br>
+Do
+![filedo9](https://cdn.discordapp.com/attachments/827014097219878982/1163804488512045086/image.png?ex=6540e864&is=652e7364&hm=ed784012fc09e7da07dd1a6617622f5dd2898d0acd52802100c7b50fa9f4ee58&)<br>
+Then test the nginx
+```
+nginx -t
+```
+![filetest9](https://cdn.discordapp.com/attachments/827014097219878982/1163804520950800474/image.png?ex=6540e86c&is=652e736c&hm=9420eb30160c5199f207f04b6cc05d1d844f62bec00d1d04f7d3dc1041a98777&)<br>
+### No 10 Answer
+Using the Round Robin algorithm for arjuna.i11.com (Haven't finished)<br>
+install bind and nginx in arjuna<br>
+```
+nano /etc/bind/named.conf.local
+```
+![file10](https://cdn.discordapp.com/attachments/827014097219878982/1163805910049759242/image.png?ex=6540e9b7&is=652e74b7&hm=8144313f73f14fd1625492ec257cc0b3679cc8b842bde078c76eb87ad7e13025&)<br>
+Edit /etc/bind/jarkom/arjuna.i11.com
+```
+nano /etc/bind/jarkom/arjuna.i11.com
+```
+![file10-2](https://cdn.discordapp.com/attachments/827014097219878982/1163805938847842334/image.png?ex=6540e9be&is=652e74be&hm=f2d479f6e85164f55ebbe4c47e004b75d6a9347d93654cfa3ecc7c2261f2a992&)<br>
+Edit file /etc/bind/jarkom/3.79.10.in-addr.arpa
+```
+nano /etc/bind/jarkom/3.79.10.in-addr.arpa
+```
+![file10-3](https://cdn.discordapp.com/attachments/827014097219878982/1163807935936344095/image.png?ex=6540eb9a&is=652e769a&hm=832b4cc053f522954f75dda0ce90c990c4e43d433ac9d0d2a0a22d911af36c6e&)<br>
+Test the domain
+![filetest10](https://cdn.discordapp.com/attachments/827014097219878982/1163805994657251348/image.png?ex=6540e9cb&is=652e74cb&hm=19ebf521036c1b6a026b9dbe7c6df0c55ffef5443a9274d1f611bfb712ecbb37&)<br>
+Back to Arjuna <br>
+Make a new file in /etc/nginx/sites-available with the name of lb-jarkom then edit it <br>
+```
+nano /etc/nginx/sites-available/lb-jarkom
+```
+![check10](https://cdn.discordapp.com/attachments/827014097219878982/1163809659849809931/image.png?ex=6540ed35&is=652e7835&hm=9456a60530e3f1ce8831edc92c77da986a409400e3670a6c2fd212b05cb40cc5&)<br>
+Write this command
+```
+In -s /etc/nginx/sites-available/lb-jarkom /etc/nginx/sites-enabled
+```
+![restart10](https://cdn.discordapp.com/attachments/827014097219878982/1163809227467399178/image.png?ex=6540ecce&is=652e77ce&hm=b447d456221378926a76774c1ef1766c94d1ab934d12565dddc4444fc47ed894&)<br>
+Then restart the nginx and bind
+```
+lynx https://arjuna.i11.com
+```
+![restartfile10](https://cdn.discordapp.com/attachments/827014097219878982/1163809280990908576/image.png?ex=6540ecdb&is=652e77db&hm=b5e53000afc3d7936d351636ba4f13df5f35afaa976171176f747c7a72851817&)<br>
+![file10-4](827014097219878982/1163810566549274707/image.png?ex=6540ee0d&is=652e790d&hm=81b6343fcdd3fcde887e035562ed44fe288430b06e59f16664cb25a270c9ce35&)<br>
