@@ -273,7 +273,7 @@ Change the file /etc/bind/delegasi/baratayuda.abimanyu.i11.com in werkudara
 /etc/bind/delegasi/baratayuda.abimanyu.i11.com
 ```
 ![file8](https://cdn.discordapp.com/attachments/827014097219878982/1163800964164227153/image.png?ex=6540e51c&is=652e701c&hm=ba6f3ff09b5901a588d530926db666709c6364d3cba5ed32a779060f257a223c&)<br>
-Restart the bind Go test in Nakula
+Restart the bind Go test in Nakula <br>
 ![check5](https://cdn.discordapp.com/attachments/827014097219878982/1163801012163850271/image.png?ex=6540e527&is=652e7027&hm=c3948cb90d4c3b05f662865d36297e57fe5deb0dd6e1b4d427a7b77018d519a6&)<br>
 ### No 9 Answer
 Configuring the three nginx worker
@@ -283,9 +283,9 @@ apt install nginx php php-fpm
 php -v
 ```
 ![file9](https://cdn.discordapp.com/attachments/827014097219878982/1163802194055794810/image.png?ex=6540e641&is=652e7141&hm=c9363d5bfc01e5074fc4040fa3c73f1d96ad3f81f4d014a351f4906887b5b111&)<br>
-Make a new folder called jarkom (do this to all worker)
+Make a new folder called jarkom (do this to all worker) <br>
 ![filefolder9](https://cdn.discordapp.com/attachments/827014097219878982/1163802665013231626/image.png?ex=6540e6b1&is=652e71b1&hm=ba4d933a8d748c4dc673799781f210c5f85f2b81248ca977d1603d674cb0b02b&)<br>
-Edit a file in the folder named index php (each node is different (optional)), Wisangemi (an example)
+Edit a file in the folder named index php (each node is different (optional)), Wisangemi (an example) <br>
 ![fileedit9](https://cdn.discordapp.com/attachments/827014097219878982/1163803142476017714/image.png?ex=6540e723&is=652e7223&hm=4fd9714bd0904220ebe8329dcb8741b74eec294fc3b5e10f94db772efb7e74a5&)<br>
 Edit the /etc/nginx/sites-available/jarkom
 ```
@@ -293,9 +293,9 @@ Edit the /etc/nginx/sites-available/jarkom
 ```
 ![fileedit9-2](https://cdn.discordapp.com/attachments/827014097219878982/1163803474442584064/image.png?ex=6540e772&is=652e7272&hm=a3e04077db2a2c986d4c23c524097ba60f192c4ca42114ee609bcb5f41b91994&)<br>
 ![fileedit9-3](https://cdn.discordapp.com/attachments/827014097219878982/1163803561239511101/image.png?ex=6540e787&is=652e7287&hm=d35527e4e7ea983f779207c26dd140ee5043f3a167e91d8c3f2242ba37085d42&)<br>
-Do
+Do <br>
 ![filedo9](https://cdn.discordapp.com/attachments/827014097219878982/1163804488512045086/image.png?ex=6540e864&is=652e7364&hm=ed784012fc09e7da07dd1a6617622f5dd2898d0acd52802100c7b50fa9f4ee58&)<br>
-Then test the nginx
+Then test the nginx <br>
 ```
 nginx -t
 ```
@@ -317,7 +317,7 @@ Edit file /etc/bind/jarkom/3.79.10.in-addr.arpa
 nano /etc/bind/jarkom/3.79.10.in-addr.arpa
 ```
 ![file10-3](https://cdn.discordapp.com/attachments/827014097219878982/1163807935936344095/image.png?ex=6540eb9a&is=652e769a&hm=832b4cc053f522954f75dda0ce90c990c4e43d433ac9d0d2a0a22d911af36c6e&)<br>
-Test the domain
+Test the domain <br>
 ![filetest10](https://cdn.discordapp.com/attachments/827014097219878982/1163805994657251348/image.png?ex=6540e9cb&is=652e74cb&hm=19ebf521036c1b6a026b9dbe7c6df0c55ffef5443a9274d1f611bfb712ecbb37&)<br>
 Back to Arjuna <br>
 Make a new file in /etc/nginx/sites-available with the name of lb-jarkom then edit it <br>
@@ -325,12 +325,12 @@ Make a new file in /etc/nginx/sites-available with the name of lb-jarkom then ed
 nano /etc/nginx/sites-available/lb-jarkom
 ```
 ![check10](https://cdn.discordapp.com/attachments/827014097219878982/1163809659849809931/image.png?ex=6540ed35&is=652e7835&hm=9456a60530e3f1ce8831edc92c77da986a409400e3670a6c2fd212b05cb40cc5&)<br>
-Write this command
+Write this command <br>
 ```
 In -s /etc/nginx/sites-available/lb-jarkom /etc/nginx/sites-enabled
 ```
 ![restart10](https://cdn.discordapp.com/attachments/827014097219878982/1163809227467399178/image.png?ex=6540ecce&is=652e77ce&hm=b447d456221378926a76774c1ef1766c94d1ab934d12565dddc4444fc47ed894&)<br>
-Then restart the nginx and bind
+Then restart the nginx and bind <br>
 ```
 lynx https://arjuna.i11.com
 ```
