@@ -335,4 +335,4 @@ Then restart the nginx and bind <br>
 lynx https://arjuna.i11.com
 ```
 ![restartfile10](https://cdn.discordapp.com/attachments/827014097219878982/1163809280990908576/image.png?ex=6540ecdb&is=652e77db&hm=b5e53000afc3d7936d351636ba4f13df5f35afaa976171176f747c7a72851817&)<br>
-![file10-4](827014097219878982/1163810566549274707/image.png?ex=6540ee0d&is=652e790d&hm=81b6343fcdd3fcde887e035562ed44fe288430b06e59f16664cb25a270c9ce35&)<br>
+![file10-4](https://cdn.discordapp.com/attachments/827014097219878982/1163810566549274707/image.png?ex=6540ee0d&is=652e790d&hm=81b6343fcdd3fcde887e035562ed44fe288430b06e59f16664cb25a270c9ce35&)<br>
